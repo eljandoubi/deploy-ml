@@ -68,7 +68,7 @@ async def greetings():
     return "Welcome to Census Bureau Classifier API"
 
 
-model, encoder, lb = joblib.load("/home/a/deploy-ml/model/transformers.pkl")
+model, encoder, lb = joblib.load("./model/transformers.pkl")
 cat_features = [f for (f,t) in features.__annotations__.items() if t==str]
 
 # Use POST action to send data to the server
