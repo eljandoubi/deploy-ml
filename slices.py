@@ -17,7 +17,7 @@ cat_features = [
 ]
 
 
-data = pd.read_csv("/home/a/deploy-ml/data/census.csv",sep=", ")
+data = pd.read_csv("./data/census.csv",sep=", ")
 
 
 _, test = train_test_split(data, test_size=0.20, random_state=42)
@@ -45,6 +45,6 @@ for feature in cat_features:
         
 slices = pd.DataFrame(list_res)
 
-slices.to_csv("/home/a/deploy-ml/slice_output.txt")
+slices.to_csv("./slice_output.txt")
 
 print(slices.sample(15))
