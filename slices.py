@@ -22,7 +22,7 @@ data = pd.read_csv("/home/a/deploy-ml/data/census.csv",sep=", ")
 
 _, test = train_test_split(data, test_size=0.20, random_state=42)
 
-model, encoder, lb = joblib.load("/home/a/deploy-ml/model/transformers.pkl")
+model, encoder, lb = joblib.load("./model/transformers.pkl")
 
 X_test, y_test, * _ = process_data(test, categorical_features=cat_features,
                               label="salary", training=False, encoder=encoder,
