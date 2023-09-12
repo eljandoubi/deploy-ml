@@ -10,7 +10,7 @@ import joblib
 
 # Add code to load in the data.
 
-data = pd.read_csv("/home/a/deploy-ml/data/census.csv",sep=", ")
+data = pd.read_csv("./data/census.csv",sep=", ")
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20, random_state=42)
@@ -49,4 +49,4 @@ results = {"precision":precision, "recall": recall, "fbeta":fbeta}
 
 print(results)
 
-joblib.dump((model, encoder, lb), "/home/a/deploy-ml/model/transformers.pkl")
+joblib.dump((model, encoder, lb), "./model/transformers.pkl")
