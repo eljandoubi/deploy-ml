@@ -46,6 +46,6 @@ for feature in cat_features:
         
 slices = pd.DataFrame(list_res)
 
-slices.to_csv("/home/a/deploy-ml/slices.csv")
+slices.to_csv("/home/a/deploy-ml/slice_output.txt")
 
-print(slices.head())
+print(slices.sample(15))
