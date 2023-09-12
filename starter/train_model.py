@@ -10,9 +10,7 @@ import joblib
 
 # Add code to load in the data.
 
-data = pd.read_csv("/home/a/deploy-ml/data/census.csv")
-
-data.columns = data.columns.str.strip()
+data = pd.read_csv("/home/a/deploy-ml/data/census.csv",sep=", ")
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20, random_state=42)
@@ -34,7 +32,7 @@ X_train, y_train, encoder, lb = process_data(
 
 # Proces the test data with the process_data function.
 
-X_test, y_test, _, _ = process_data(test, categorical_features=cat_features,
+X_test, y_test, * _ = process_data(test, categorical_features=cat_features,
                               label="salary", training=False, encoder=encoder,
                               lb=lb)
 

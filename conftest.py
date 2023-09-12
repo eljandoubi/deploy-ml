@@ -5,9 +5,8 @@ import pytest
 
 def data_plugin():
 
-    data = pd.read_csv("/home/a/deploy-ml/data/census.csv")
+    data = pd.read_csv("/home/a/deploy-ml/data/census.csv",sep=", ")
     
-    data.columns = data.columns.str.strip()
     
     train, test = train_test_split(data, test_size=0.20, random_state=42)
     
