@@ -5,7 +5,7 @@ import pytest
 
 def data_plugin():
 
-    data = pd.read_csv("./census.csv",sep=", ")
+    data = pd.read_csv("./data/census.csv",sep=", ")
     
     
     train, test = train_test_split(data, test_size=0.20, random_state=42)
