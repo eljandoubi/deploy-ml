@@ -15,7 +15,7 @@ data = pd.read_csv("/home/a/deploy-ml/data/census.csv")
 data.columns = data.columns.str.strip()
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(data, test_size=0.20)
+train, test = train_test_split(data, test_size=0.20, random_state=42)
 
 cat_features = [
     "workclass",
@@ -27,6 +27,7 @@ cat_features = [
     "sex",
     "native-country",
 ]
+
 X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label="salary", training=True
 )
@@ -50,6 +51,4 @@ results = {"precision":precision, "recall": recall, "fbeta":fbeta}
 
 print(results)
 
-model_path="/home/a/deploy-ml/model/transformers.pkl"
-
-joblib.dump((model, encoder, lb), model_path)
+joblib.dump((model, encoder, lb), "/home/a/deploy-ml/model/transformers.pkl")
