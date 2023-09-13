@@ -22,8 +22,8 @@ def train_model(X_train, y_train):
 
     parameters = {
         'n_estimators': [250, 500, 1000],
-        'max_depth': [5, 25, 50],
-        'min_samples_split': [2, 3, 4, 5],
+        'max_depth': [3, 5, 10],
+        'min_samples_split': [2, 5, 10],
         'learning_rate': [0.01, 0.05, 0.1],
     }
 
