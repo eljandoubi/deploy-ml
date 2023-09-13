@@ -17,7 +17,7 @@ data = json.dumps({
         "hours_per_week": 40,
         "native_country": "United-States"})
 
-res = requests.post("http://127.0.0.1:8000/invocations", data=data)
+res = requests.post("https://census-web-app.onrender.com/invocations", data=data)
 
 print("status_code",res.status_code)
 print("result",res.json())
