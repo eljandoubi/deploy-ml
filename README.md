@@ -41,5 +41,5 @@ The project follows these steps:
 
 No external storage was necessary due to the dataset and model's light weights. External storage with Azure blob together with DVC for versioning could be implemented depending on the use case and the weight of these two major components.
                                      
-This the URL of API : ![census web app](https://census-web-app.onrender.com ) It may be unavailable by the time you read this.
+This the URL of API : [census web app](https://census-web-app.onrender.com ) It may be unavailable by the time you read this.
   
