@@ -19,4 +19,5 @@ data = json.dumps({
 
 res = requests.post("https://census-web-app.onrender.com/invocations", data=data)
 
-print(res.json())
+print("status_code",res.status_code)
+print("result",res.json())
