@@ -25,10 +25,6 @@ The project follows these steps:
 * Inference can be performed using the dedicated script "request.py". The script posts a sample item (14 features) to the app url/invocations and the prediction is returned. The inference is performed by the main.py module using the trained pipeline saved in the ./model folder
 * See the screenshots as illustrations [here](https://github.com/eljandoubi/deploy-ml/tree/main/screenshots )
  
- 
- # Environment and Set-up                                            
- The project is conducted under windows WSL2. Python 3.7 is used inside a virtual environment. Necessary packages are provided in the requirements.txt file also used for the Render deployment. Screenshots are provided to document the major achievements of the project.
-
  - CI/CD Github actions validation
  ![](screenshots/github_actions_success.png)
 

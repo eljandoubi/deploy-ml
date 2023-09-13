@@ -1,4 +1,5 @@
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.metrics import (fbeta_score, precision_score,
+                             recall_score, make_scorer)
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import GridSearchCV
 
@@ -20,23 +21,24 @@ def train_model(X_train, y_train):
     """
 
     parameters = {
-        'n_estimators': [10, 25, 50, 100],
-        'max_depth': [5, 10, 15],
-        'min_samples_split': [10, 20, 30, 40],
-        'learning_rate': [0.1,0.5,1.0],
+        'n_estimators': [250, 500, 1000],
+        'max_depth': [5, 25, 50],
+        'min_samples_split': [2, 3, 4, 5],
+        'learning_rate': [0.01, 0.05, 0.1],
     }
 
-
+    f1_metric = make_scorer(fbeta_score, beta=1, zero_division=1)
 
     clf = GridSearchCV(GradientBoostingClassifier(random_state=42),
                        param_grid=parameters,
                        cv=4,
                        n_jobs=-1,
-                       verbose=3,
+                       verbose=5,
+                       refit=True,
+                       scoring=f1_metric
                        )
 
     clf.fit(X_train, y_train)
-
 
     return clf
 

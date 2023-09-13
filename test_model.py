@@ -15,6 +15,12 @@ def test_train(train_model):
         
     assert type(pytest.model)==GridSearchCV
     assert type(pytest.model.estimator)==GradientBoostingClassifier
+    
+    try :
+        pytest.model.best_estimator_
+    
+    except AttributeError:
+        raise AttributeError
         
         
 @pytest.mark.parametrize("inference",[inference])

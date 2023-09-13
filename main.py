@@ -22,42 +22,42 @@ class features(BaseModel):
     hours_per_week: int
     native_country: str
 
-    class Config:
-        json_schema_extra = [{
-
-                "age": 39,
-                "workclass": "State-gov",
-                "fnlgt": 77516,
-                "education": "Bachelors",
-                "education_num": 13,
-                "marital_status": "Never-married",
-                "occupation": "Adm-clerical",
-                "relationship": "Not-in-family",
-                "race": "White",
-                "sex": "Male",
-                "capital_gain": 2174,
-                "capital_loss": 0,
-                "hours_per_week": 40,
-                "native_country": "United-States"
-
-        },
-        
-        { 'age':50,
-            'workclass':"Private", 
-            'fnlgt':234721,
-            'education':"Doctorate",
-            'education_num':16,
-            'marital_status':"Separated",
-            'occupation':"Exec-managerial",
-            'relationship':"Not-in-family",
-            'race':"Black",
-            'sex':"Female",
-            'capital_gain':0,
-            'capital_loss':0,
-            'hours_per_week':50,
-            'native_country':"United-States"
-            }
-        ]
+    model_config ={ "json_schema_extra" :{
+            "examples": [
+                {
+                    "age": 39,
+                    "workclass": "State-gov",
+                    "fnlgt": 77516,
+                    "education": "Bachelors",
+                    "education_num": 13,
+                    "marital_status": "Never-married",
+                    "occupation": "Adm-clerical",
+                    "relationship": "Not-in-family",
+                    "race": "White",
+                    "sex": "Male",
+                    "capital_gain": 2174,
+                    "capital_loss": 0,
+                    "hours_per_week": 40,
+                    "native_country": "United-States"
+                    },
+                {
+                    'age':50,
+                    'workclass':"Private", 
+                    'fnlgt':234721,
+                    'education':"Doctorate",
+                    'education_num':16,
+                    'marital_status':"Separated",
+                    'occupation':"Exec-managerial",
+                    'relationship':"Not-in-family",
+                    'race':"Black",
+                    'sex':"Female",
+                    'capital_gain':0,
+                    'capital_loss':0,
+                    'hours_per_week':50,
+                    'native_country':"United-States"
+                    }
+                ]
+            }}
 
 # Instantiate the app.
 app = FastAPI()

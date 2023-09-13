@@ -1,0 +1,2 @@
+{'learning_rate': 0.05, 'max_depth': 5, 'min_samples_split': 5, 'n_estimators': 500}
+{'precision': 0.7900960827790096, 'recall': 0.6804583068109484, 'fbeta': 0.7311901504787961}

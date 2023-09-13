@@ -10,7 +10,7 @@ import joblib
 
 # Add code to load in the data.
 
-data = pd.read_csv("./data/census.csv",sep=", ")
+data = pd.read_csv("./data/census.csv", sep=", ", engine='python')
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20, random_state=42)
@@ -41,6 +41,8 @@ X_test, y_test, * _ = process_data(test, categorical_features=cat_features,
 
 model = train_model(X_train, y_train)
 
+print("best params",model.best_params_)
+
 preds = inference(model, X_test)
 
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
@@ -50,3 +52,7 @@ results = {"precision":precision, "recall": recall, "fbeta":fbeta}
 print(results)
 
 joblib.dump((model, encoder, lb), "./model/transformers.pkl")
+
+with open("./results.txt","w+") as f:
+    txt=str(model.best_params_)+"\n"+str(results)
+    f.write(txt)
