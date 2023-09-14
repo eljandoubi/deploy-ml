@@ -9,14 +9,12 @@ The project follows these steps:
 - Deploy the app using Render to provide inference endpoint
 
 # Environment Set up
-* Download and install conda if you don’t have it already.
-    * conda create -n [envname] python=3.7
-    * conda activate [envname]
-    * Install git either through conda (“conda install git”) or through your CLI, e.g. sudo apt-get git.
-    * pip install -r requirements.txt
-* Get the repository
-    * Clone the repository ```git clone https://github.com/eljandoubi/deploy-ml.git```
-    * Move to folder ```cd deploy-ml```
+* conda create -n deploy python=3.7
+* conda activate deploy
+* Install git either through conda (“conda install git”) or through your CLI, e.g. sudo apt-get git.
+* Clone the repository ```git clone https://github.com/eljandoubi/deploy-ml.git```
+* Move to folder ```cd deploy-ml```
+* pip install -r requirements.txt
     
 # Using the API client
 * main.py app is deployed to Render from github repo with CI/CD enabled. Automatic deployments are performed only if Github actions continuous integration validation passes
